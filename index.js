@@ -56,7 +56,7 @@ let Logger = {
 };
 function createLogger(filePath) {
   if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath);
+    fs.appendFileSync(filePath, "" + "\n", "utf-8");
   }
   PATH = filePath;
 }
