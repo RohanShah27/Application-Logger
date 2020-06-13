@@ -5,15 +5,20 @@ let Logger = {
   // logger.info is used to track all the info realted logs for development teams -Rohan
   info(log) {
     let obj = { type: "info", log: log, timestamp: time };
-    PATH ? fs.writeFile(PATH, obj) : console.log(obj);
+    PATH
+      ? fs.appendFileSync(PATH, JSON.stringify(obj) + "\n", "utf-8")
+      : console.log(obj);
   },
   //   Any warnings that might need to be changed for development related errors -Rohan
   warn(log) {
-    console.log({ type: "warn", log: log, timestamp: time });
+    let obj = { type: "warn", log: log, timestamp: time };
+    PATH
+      ? fs.appendFileSync(PATH, JSON.stringify(obj) + "\n", "utf-8")
+      : console.log(obj);
   },
   error(log) {
     //   Errors like 400 or 401 codes can be logged using error logger -Rohan
-    console.log({
+    let obj = {
       type: "error",
       log: {
         status: log.status ? log.status : 400,
@@ -23,11 +28,15 @@ let Logger = {
           : "No description provided",
       },
       timestamp: time,
-    });
+    };
+    PATH
+      ? fs.appendFileSync(PATH, JSON.stringify(obj) + "\n", "utf-8")
+      : console.log(obj);
   },
   fatal(log) {
     //   Any kind of fatal error like 500 error or type errors that hamper the client request should be marked as fatal -Rohan
-    console.log({
+
+    let obj = {
       type: "fatal",
       log: {
         status: log.status ? log.status : 500,
@@ -37,14 +46,15 @@ let Logger = {
           : "No description provided",
       },
       timestamp: time,
-    });
+    };
+    PATH
+      ? fs.appendFileSync(PATH, JSON.stringify(obj) + "\n", "utf-8")
+      : console.log(obj);
   },
 };
 function createLogger(filePath) {
   if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, function (err) {
-      if (err) throw err;
-    });
+    fs.writeFileSync(filePath);
   }
   PATH = filePath;
 }
