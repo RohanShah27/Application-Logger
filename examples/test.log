@@ -1,5 +1,4 @@
-
-{"type":"info","log":"information level log","timestamp":1592035332703}
-{"type":"warn","log":"Warning level log","timestamp":1592035332703}
-{"type":"error","log":{"status":401,"message":"Error level log","description":"Description of error "},"timestamp":1592035332703}
-{"type":"fatal","log":{"status":500,"message":"Fatal level log","description":"Description of Fatal error "},"timestamp":1592035332703}
+{"type":"info","log":"information level log","timestamp":1592035424680}
+{"type":"warn","log":"Warning level log","timestamp":1592035424680}
+{"type":"error","log":{"status":401,"message":"Error level log","description":"Description of error "},"timestamp":1592035424680}
+{"type":"fatal","log":{"status":500,"message":"Fatal level log","description":"Description of Fatal error "},"timestamp":1592035424680}
