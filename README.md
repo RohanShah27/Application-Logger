@@ -13,11 +13,11 @@ This library covers 4 different levels of logs that can either be on STDOUT or o
 ## Usage
 
 ```
-const logger=require("../index").Logger; //Logs to STDOUT
+const logger=require("application-logger").Logger; //Logs to STDOUT
 
 <!-- To create a log file and then log inside it make use of createLogger function -->
 
-const logger=require("../index").createLogger("test.log");
+const logger=require("application-logger").createLogger("test.log");
 ```
 
 Error, Fatal level logs comprise of
@@ -53,8 +53,8 @@ This is for STDOUT logs.
 This is for File Logs.
 
 ```
-var logger = require("../index").Logger;
-var createFile = require("../index").createLogger("test.log");
+var logger = require("application-logger").Logger;
+var createFile = require("application-logger").createLogger("test.log");
  logger.info("information level log");
   logger.warn("Warning level log");
   logger.error({
