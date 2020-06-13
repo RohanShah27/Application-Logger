@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Rohan Shah
+
 var fs = require("fs");
 let time = Date.now(); //Declare the current time everytime the function is called -Rohan
 var PATH = null;
