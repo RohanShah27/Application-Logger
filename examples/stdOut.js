@@ -1,6 +1,7 @@
 var logger = require("../index").Logger;
-
+// Only generating logs on std out -Rohan
 function generateLogs() {
+  // Example of all types of levels of logs -Rohan
   logger.info("information level log");
   logger.warn("Warning level log");
   logger.error({

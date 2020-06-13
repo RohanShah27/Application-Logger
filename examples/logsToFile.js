@@ -1,5 +1,5 @@
 var logger = require("../index").Logger;
-var createFile = require("../index").createLogger("test.log");
+var createFile = require("../index").createLogger("test.log"); //assigning a file -Rohan
 function generateLogs() {
   logger.info("information level log");
   logger.warn("Warning level log");
